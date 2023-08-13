@@ -1,5 +1,18 @@
 package com.github.cm.marqueetextview
+/*
+Copyright [2023] [cooliceman]
 
+Licensed under the Apache License, Version 2.0 (the "License");
+
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and limitations under the License.
+*/
 
 import android.content.Context
 import android.graphics.Canvas
@@ -21,6 +34,7 @@ import androidx.core.graphics.withSave
  */
 class MarqueeTextView : AppCompatTextView {
     private var mFps = 60
+
     /*
      * 创建一个内部TextView用于确保实际文字占用空间和在TextView中显示的一致,
      * 根据paint进行文字长度计算可能出现和实际显示到TextView时占用宽度不符的情况,出现文字被截断几个像素,并且不滚动的情况
@@ -159,7 +173,10 @@ class MarqueeTextView : AppCompatTextView {
             //当文字已经完整显示,在可见区左侧添加第二次绘制,产生首尾相接连续滚动效果
             if (mLeftX - (mTextView.measuredWidth - width) > 0) {
                 canvas.withSave {
-                    canvas.translate(-mTextView.measuredWidth - mSpace + mLeftX - (mTextView.measuredWidth - width) , 0f)
+                    canvas.translate(
+                        -mTextView.measuredWidth - mSpace + mLeftX - (mTextView.measuredWidth - width),
+                        0f
+                    )
                     mTextView.draw(canvas)
                 }
             }

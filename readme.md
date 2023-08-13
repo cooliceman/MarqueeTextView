@@ -1,8 +1,39 @@
 # MarqueeTextView
 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.cooliceman/marquee-text-view)](https://mvnrepository.com/artifact/io.github.cooliceman)
+[![GitHub License](https://img.shields.io/badge/license-Apache%20License%202.0-green.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
+
 MarqueeTextView is a custom Android TextView widget that provides a marquee effect for displaying scrolling text. 
 
 It allows you to create dynamic and eye-catching UI elements for your Android applications, especially useful for displaying long text strings that cannot fit within the available screen space.
+
+## Setup
+
+To add MarqueeTextView to your Android project using Maven, follow these steps:
+
+Step 1: Open your project's `build.gradle` file.
+
+Step 2: Add the Maven repository to the `repositories` section:
+
+```gradle
+allprojects {
+    repositories {
+        mavenCentral()
+        // ... other repositories ...
+    }
+}
+```
+Step 3: Open your app's build.gradle file.
+
+Step 4: Add the MarqueeTextView dependency:
+
+```gradle
+dependencies {
+    implementation 'io.github.cooliceman:marquee-text-view:version'
+}
+```
+
+You can find the latest version on the Releases page of this repository.
 
 ## Usage
 
